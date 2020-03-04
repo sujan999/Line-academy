@@ -1,0 +1,38 @@
+{{paymentRequest}}
+<p class="main">
+    <label class="required">Student Name<span style="color: red;"><sup> *</sup></span></label>
+    <input type="text" class="form-control" name="studentName" ng-model="paymentRequest.properties.studentName"
+        required>
+</p>
+<p class="error" ng-show="paymentForm.studentName.$touched && paymentForm.studentName.$error.required">
+    Required
+</p>
+
+<p class="main">
+    <label class="required">Year<span style="color: red;"><sup> *</sup></span></label>
+    <select name="Year" class="form-control" ng-model="paymentRequest.properties.xyz" required>
+        <option value="">-Select-</option>
+
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+    </select>
+</p>
+
+<p class="error" ng-show="">
+    Required
+</p>
+
+<p class="main">
+    <label class="required">Amount <span style="color: red;"><sup> *</sup></span></label>
+    <input type="number" class="form-control" name="amount" ng-min="10" ng-model="paymentRequest.amount" required>
+</p>
+
+
+<p class="error" ng-show="paymentForm.amount.$touched && paymentForm.amount.$error.required">
+    Required
+</p>
+
+<p class="error" ng-show="paymentForm.amount.$touched && paymentForm.amount.$error.min">
+    Invalid min amount.
+</p>
